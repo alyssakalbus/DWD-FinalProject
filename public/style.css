@@ -1,7 +1,7 @@
 /* Custom Font */
 @font-face {
     font-family: 'font';
-    src: url('fonts/AzeretMono-Regular.woff2') format('woff2');
+    src: url('/fonts/Heming Variable.ttf') format('truetype');
     font-display: swap;
   }
   
