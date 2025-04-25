@@ -14,7 +14,7 @@
   
   /* Base Styles */
   body {
-    background: #A3F472;
+    background: #000000;
     color: #fff;
     font-family: 'font', sans-serif;
     min-height: 100vh;
@@ -39,16 +39,20 @@
     text-align: center;
   }
   
-  main {
-    flex: 1;
+  /* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(11, auto); /* 11 rows with automatic height */
+    column-gap: 50px; /* 50px gutter between columns */
+    row-gap: 20px; /* 20px gutter between rows */
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+    padding: 2rem;
+    align-items: start; /* Align items to the start of each grid cell */
+    justify-items: center; /* Center items horizontally in each grid cell */
+}
   
   /* Card Layout */
   .card-container {
@@ -62,7 +66,7 @@
   }
   
   .atvImg {
-    background: #bfff9a;
+    background: #d2d2d2;
     border-radius: 30px;
     width: 350px;
     height: 580px;
@@ -110,7 +114,7 @@
     padding: 1rem;
     text-align: center;
     border-radius: 10px;
-    background-color: #FDD8D9;
+    background-color: #ffffff;
     overflow-y: auto;
   }
   
@@ -126,5 +130,97 @@
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
   }
-  
-  
+
+/* Add these styles to your existing CSS */
+
+nav {
+    margin-bottom: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #454545;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Login Form Styles */
+.login-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: 2px solid #ffffff;
+}
+
+.login-form .cta-button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.form-footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+

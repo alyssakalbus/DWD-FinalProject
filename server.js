@@ -3,20 +3,32 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Serve static files from public directory
-app.use(express.static('public'));
+// Add middleware to parse JSON and form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
-app.get('/reading', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/reading.html'));
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/login.html'));
 });
 
 app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/about.html'));
+});
+
+// Add login POST endpoint
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    // Here you would typically:
+    // 1. Validate the credentials
+    // 2. Check against a database
+    // 3. Create a session
+    // For now, we'll just send a response
+    res.json({ message: 'Login functionality coming soon' });
 });
 
 app.listen(port, () => {
