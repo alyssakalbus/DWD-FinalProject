@@ -3,123 +3,91 @@
     font-family: 'font';
     src: url('/fonts/Heming Variable.ttf') format('truetype');
     font-display: swap;
-  }
-  
-  /* Reset */
-  * {
+}
+
+/* Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  /* Base Styles */
-  body {
-    background: #000000;
+}
+
+/* Base Styles */
+body {
+    background: #000;
     color: #fff;
     font-family: 'font', sans-serif;
-    min-height: 100vh;
+    font-size: 16px; /* Uniform text size */
+    line-height: 1.5;
+    margin: 0;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
     overflow: hidden;
-    line-height: 1.75;
-    letter-spacing: 0.05em;
-    padding: 1rem;
-    text-transform: uppercase;
-  }
-  
-  /* Layout Components */
-  header {
+}
+
+/* Header */
+header {
     position: fixed;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-  }
-  
-  /* Main Layout */
+    padding: 1rem;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header h1 {
+    text-transform: uppercase; /* Make header text all caps */
+    color: #fff; /* Ensure text color is consistent */
+    margin: 0;
+}
+
+/* Main Layout */
 main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: repeat(11, auto); /* 11 rows with automatic height */
-    column-gap: 50px; /* 50px gutter between columns */
-    row-gap: 20px; /* 20px gutter between rows */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
     padding: 2rem;
-    align-items: start; /* Align items to the start of each grid cell */
-    justify-items: center; /* Center items horizontally in each grid cell */
 }
-  
-  /* Card Layout */
-  .card-container {
+
+/* Card Layout */
+.card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
-    place-items: center;
     margin: 0 auto;
-    transform: translateY(-6rem);
-  }
-  
-  .atvImg {
+}
+
+.atvImg {
     background: #d2d2d2;
-    border-radius: 30px;
+    border-radius: 20px;
     width: 350px;
     height: 580px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    margin: 0 auto;
-  }
-  
-  /* Card States */
-  .atvImg:hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.atvImg:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 200px rgba(255, 255, 255, 0.3);
-  }
-  
-  .atvImg.active {
-    box-shadow: 0 0 200px rgb(255, 255, 255);
-  }
-  
-  /* Content Styling */
-  h2 {
-    font-size: 4rem;
-  }
-  
-  .highlight {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  #tarot-content p {
-    margin-bottom: 1rem;
-  }
-  
-  /* Output Panel */
-  #output {
-    position: fixed;
-    bottom: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1000px;
-    max-height: 200px;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #ffffff;
-    overflow-y: auto;
-  }
-  
-  /* Footer */
-  footer {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Footer */
+footer {
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -129,65 +97,69 @@ main {
     text-align: center;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
-  }
+}
 
-/* Add these styles to your existing CSS */
-
+/* Navigation */
 nav {
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start; /* Align links to the left */
+    gap: 1rem; /* Add spacing between links */
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1rem;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Make links take full width if needed */
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px); /* Add hover effect */
 }
 
-.cta-button {
-    display: inline-block;
+nav a:active {
+    background-color: rgba(255, 255, 255, 0.4); /* Darker background for active state */
+    transform: translateY(2px); /* Slightly pressed effect */
+}
+
+/* Active State for Navigation Links */
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.4); /* Highlight color for active state */
+    color: #000; /* Optional: Change text color */
+}
+
+/* Buttons */
+button, .cta-button {
+    text-transform: uppercase;
     padding: 1rem 2rem;
-    background-color: #454545;
+    background: #454545;
     color: #000;
-    text-decoration: none;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.cta-button:hover {
+button:hover, .cta-button:hover {
     transform: translateY(-4px);
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+button:active, .cta-button:active {
+    background: #333; /* Darker background for active state */
+    transform: translateY(2px); /* Slightly pressed effect */
 }
 
-/* Login Form Styles */
+/* Forms */
 .login-form {
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 10px;
-    width: 100%;
     max-width: 400px;
     margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
 .form-group input {
@@ -197,30 +169,20 @@ nav a:hover {
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.9);
     color: #000;
-    font-family: inherit;
 }
 
 .form-group input:focus {
-    outline: 2px solid #ffffff;
+    outline: 2px solid #fff;
 }
 
-.login-form .cta-button {
-    width: 100%;
-    margin-top: 1rem;
+/* Circle Styles */
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ff0000; /* Red color */
+    border-radius: 50%; /* Makes it a circle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the circle */
 }
-
-.form-footer {
-    margin-top: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.form-footer a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.form-footer a:hover {
-    text-decoration: underline;
-}
-
