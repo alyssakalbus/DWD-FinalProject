@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alt Bioencryption - Login</title>
+    <title>Altera Bio-encryption</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="/assets/leaf.mp4" type="video/mp4">
+      </video>
+      
     <header>
-        <h1>Alt Bioencryption</h1>
+        <h1>Altera Bio-encryption</h1>
         <a href="/login" class="cta-button">Log In</a>
     </header>
 
     <main>
         <form class="login-form">
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">User Name or Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
@@ -27,13 +32,15 @@
                 Don't have an account? <a href="/apply">Apply here</a>
             </p>
         </form>
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/apply" class="active">Apply</a>
+            <a href="/" class="active"> 01 About</a>
+            <a href="/about">02 Careers</a>
+            <a href="/apply">03 The Lab</a>
         </nav>
     </main>
-
+    <script src="/script.js"></script>
     <footer>
     </footer>
 </body>

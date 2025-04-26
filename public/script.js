@@ -1,22 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Constants and Configurations
-    const LINE_THICKNESS = '.5px';
-    const OFFSET_FROM_CENTER = 200;
-    const CIRCLE_PROPERTIES = {
-        mainCircle: {
-            baseWidth: 750,
-            baseHeight: 750,
-            widthRatio: 0.9,
-            heightRatio: 0.9,
-            top: '5%',
-            left: '50%'
+    const CONFIG = {
+        lines: {
+            thickness: '.5px'
         },
-        secondaryCircle: {
-            scale: 0.45
+        circles: {
+            main: {
+                baseWidth: 750,
+                baseHeight: 750,
+                widthRatio: 0.9,
+                heightRatio: 0.9,
+                top: '5%',
+                left: '50%'
+            },
+            secondary: {
+                scale: 0.45
+            },
+            dot: {
+                size: '10px',
+                color: '#ffffff'
+            }
         },
-        dotCircle: {
-            size: '10px',
-            color: '#ffffff'
+        animation: {
+            rotationDuration: 20,
+            dotSpeed: 2,
+            dotsCount: {
+                rotating: 2,
+                horizontal: 2,
+                vertical: 2
+            }
         }
     };
 
@@ -24,14 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
 
     // Helper Functions
-    function createCircle({ width, height, top, left, scale, isMainCircle = false }) {
+    function createCircle({ width, height, top, left, isMainCircle = false }) {
         const circle = document.createElement('div');
         circle.classList.add('circle');
-        circle.style.width = width;
-        circle.style.height = height;
-        circle.style.position = 'absolute';
-        circle.style.top = top;
-        circle.style.left = left;
+        
+        Object.assign(circle.style, {
+            width,
+            height,
+            position: 'absolute',
+            top,
+            left
+        });
+        
         if (!isMainCircle) circle.style.transform = 'translate(-50%, -50%)';
         document.body.appendChild(circle);
         return circle;
@@ -40,13 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function createDot(x, y) {
         const dot = document.createElement('div');
         dot.classList.add('circle');
-        dot.style.width = CIRCLE_PROPERTIES.dotCircle.size;
-        dot.style.height = CIRCLE_PROPERTIES.dotCircle.size;
-        dot.style.backgroundColor = CIRCLE_PROPERTIES.dotCircle.color;
-        dot.style.position = 'absolute';
-        dot.style.left = `${x}px`;
-        dot.style.top = `${y}px`;
-        dot.style.transform = 'translate(-50%, -50%)';
+        
+        Object.assign(dot.style, {
+            width: CONFIG.circles.dot.size,
+            height: CONFIG.circles.dot.size,
+            backgroundColor: CONFIG.circles.dot.color,
+            position: 'absolute',
+            left: `${x}px`,
+            top: `${y}px`,
+            transform: 'translate(-50%, -50%)'
+        });
+        
         document.body.appendChild(dot);
         return dot;
     }
@@ -54,19 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function createLine(isHorizontal, position) {
         const line = document.createElement('div');
         line.classList.add('cross-line');
-        line.style.position = 'absolute';
-        line.style.width = isHorizontal ? '100vw' : LINE_THICKNESS;
-        line.style.height = isHorizontal ? LINE_THICKNESS : '100vh';
-        line.style.top = isHorizontal ? `${position}px` : '0';
-        line.style.left = isHorizontal ? '0' : `${position}px`;
+        
+        Object.assign(line.style, {
+            position: 'absolute',
+            width: isHorizontal ? '100vw' : CONFIG.lines.thickness,
+            height: isHorizontal ? CONFIG.lines.thickness : '100vh',
+            top: isHorizontal ? `${position}px` : '0',
+            left: isHorizontal ? '0' : `${position}px`
+        });
+        
         document.body.appendChild(line);
         return line;
     }
 
     function calculateCircleSize(viewportWidth, viewportHeight) {
         return Math.min(
-            viewportWidth * CIRCLE_PROPERTIES.mainCircle.widthRatio,
-            viewportHeight * CIRCLE_PROPERTIES.mainCircle.heightRatio
+            viewportWidth * CONFIG.circles.main.widthRatio,
+            viewportHeight * CONFIG.circles.main.heightRatio
         );
     }
 
@@ -74,69 +98,71 @@ document.addEventListener('DOMContentLoaded', () => {
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
 
-        // Calculate main circle size
         const mainCircleWidth = calculateCircleSize(viewportWidth, viewportHeight);
         circle1.style.width = `${mainCircleWidth}px`;
         circle1.style.height = `${mainCircleWidth}px`;
 
-        // Get first circle's position
         const circle1Rect = circle1.getBoundingClientRect();
         const circle1CenterX = circle1Rect.left + circle1Rect.width / 2;
         const circle1CenterY = circle1Rect.top + circle1Rect.height / 2;
 
-        // Calculate second circle size and position
-        const secondaryCircleSize = mainCircleWidth * CIRCLE_PROPERTIES.secondaryCircle.scale;
+        const secondaryCircleSize = mainCircleWidth * CONFIG.circles.secondary.scale;
         circle2.style.width = `${secondaryCircleSize}px`;
         circle2.style.height = `${secondaryCircleSize}px`;
 
-        // Calculate relative position using the ratio of current size to base size
-        const sizeRatio = mainCircleWidth / CIRCLE_PROPERTIES.mainCircle.baseWidth;
+        const sizeRatio = mainCircleWidth / CONFIG.circles.main.baseWidth;
         const relativeOffsetX = 570 * sizeRatio;
         const relativeOffsetY = 440 * sizeRatio;
 
-        // Update second circle position maintaining relative distance
         circle2.style.top = `${circle1CenterY + (circle1Rect.height / 2) - relativeOffsetY}px`;
         circle2.style.left = `${circle1CenterX + (circle1Rect.width / 2) - relativeOffsetX}px`;
 
-        // Update second circle center position for lines
         const circle2Rect = circle2.getBoundingClientRect();
         const circle2CenterX = circle2Rect.left + circle2Rect.width / 2;
         const circle2CenterY = circle2Rect.top + circle2Rect.height / 2;
 
-        // Update lines
         line1.style.top = `${circle2CenterY}px`;
         line2.style.left = `${circle2CenterX}px`;
 
-        // Update nav position
         const navOffsetX = circle1Rect.width / 4;
         const navOffsetY = circle1Rect.height / 4;
-        nav.style.position = 'absolute';
-        nav.style.top = `${circle1CenterY + navOffsetY}px`;
-        nav.style.left = `${circle1CenterX + navOffsetX}px`;
-        nav.style.transform = 'translate(-50%, -50%)';
+        
+        Object.assign(nav.style, {
+            position: 'absolute',
+            top: `${circle1CenterY + navOffsetY}px`,
+            left: `${circle1CenterX + navOffsetX}px`,
+            transform: 'translate(-50%, -50%)'
+        });
     }
 
-    function positionDotsOnCircle(circle, dots, radius, duration) {
-        const circleRect = circle.getBoundingClientRect();
-        const centerX = circleRect.left + circleRect.width / 2;
-        const centerY = circleRect.top + circleRect.height / 2;
+    function animateDotsAroundCircle(circle, dots, radius, rotationSpeed) {
+        let startTime = null;
 
-        dots.forEach((dot, index) => {
-            const angle = (index / dots.length) * 360; // Distribute dots evenly
-            const radian = (angle * Math.PI) / 180;
+        function animate(time) {
+            if (!startTime) startTime = time;
+            const elapsed = (time - startTime) / 1000;
 
-            const x = centerX + radius * Math.cos(radian);
-            const y = centerY + radius * Math.sin(radian);
+            const circleRect = circle.getBoundingClientRect();
+            const centerX = circleRect.left + circleRect.width / 2;
+            const centerY = circleRect.top + circleRect.height / 2;
 
-            dot.style.position = 'absolute';
-            dot.style.left = `${x}px`;
-            dot.style.top = `${y}px`;
-            dot.style.transform = 'translate(-50%, -50%)';
+            dots.forEach((dot, index) => {
+                const angleOffset = (index / dots.length) * 2 * Math.PI;
+                const angle = (elapsed * rotationSpeed) + angleOffset;
 
-            // Add rotation animation
-            dot.style.animation = `rotate-circle ${duration}s linear infinite`;
-            dot.style.transformOrigin = `${centerX - x}px ${centerY - y}px`;
-        });
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+
+                Object.assign(dot.style, {
+                    left: `${x}px`,
+                    top: `${y}px`,
+                });
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
     }
 
     function animateDotsOnLines(lineDots, isHorizontal, speed) {
@@ -144,10 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let position = parseFloat(dot.style[isHorizontal ? 'left' : 'top']) || 0;
 
             function moveDot() {
-                // Increment position
                 position += speed;
 
-                // Reset position if the dot goes offscreen
                 if (isHorizontal) {
                     if (position > window.innerWidth) position = 0;
                     dot.style.left = `${position}px`;
@@ -164,63 +188,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialization
-    const circle1 = createCircle({
-        width: `${CIRCLE_PROPERTIES.mainCircle.baseWidth}px`,
-        height: `${CIRCLE_PROPERTIES.mainCircle.baseHeight}px`,
-        top: CIRCLE_PROPERTIES.mainCircle.top,
-        left: CIRCLE_PROPERTIES.mainCircle.left,
-        isMainCircle: true
-    });
+    function initialize() {
+        const circle1 = createCircle({
+            width: `${CONFIG.circles.main.baseWidth}px`,
+            height: `${CONFIG.circles.main.baseHeight}px`,
+            top: CONFIG.circles.main.top,
+            left: CONFIG.circles.main.left,
+            isMainCircle: true
+        });
 
-    const circle1Rect = circle1.getBoundingClientRect();
-    const circle1CenterX = circle1Rect.left + circle1Rect.width / 2;
-    const circle1CenterY = circle1Rect.top + circle1Rect.height / 2;
+        const circle1Rect = circle1.getBoundingClientRect();
+        const circle1CenterX = circle1Rect.left + circle1Rect.width / 2;
+        const circle1CenterY = circle1Rect.top + circle1Rect.height / 2;
 
-    const circle2 = createCircle({
-        width: `${circle1Rect.width * CIRCLE_PROPERTIES.secondaryCircle.scale}px`,
-        height: `${circle1Rect.height * CIRCLE_PROPERTIES.secondaryCircle.scale}px`,
-        top: `${circle1CenterY + circle1Rect.height / 2 - 440}px`,
-        left: `${circle1CenterX + circle1Rect.width / 2 - 570}px`
-    });
+        const circle2 = createCircle({
+            width: `${circle1Rect.width * CONFIG.circles.secondary.scale}px`,
+            height: `${circle1Rect.height * CONFIG.circles.secondary.scale}px`,
+            top: `${circle1CenterY + circle1Rect.height / 2 - 418}px`,
+            left: `${circle1CenterX + circle1Rect.width / 2 - 570}px`
+        });
 
-    const circle2Rect = circle2.getBoundingClientRect();
-    const circle2CenterX = circle2Rect.left + circle2Rect.width / 2;
-    const circle2CenterY = circle2Rect.top + circle2Rect.height / 2;
+        const circle2Rect = circle2.getBoundingClientRect();
+        const circle2CenterX = circle2Rect.left + circle2Rect.width / 2 + 13.5;
+        const circle2CenterY = circle2Rect.top + circle2Rect.height / 2;
 
-    // After all initializations (at the bottom of the DOMContentLoaded event listener)
-    const line1 = createLine(true, circle2CenterY);
-    const line2 = createLine(false, circle2CenterX);
+        const line1 = createLine(true, circle2CenterY);
+        const line2 = createLine(false, circle2CenterX);
 
-    // Add rotating dots on the main circle
-    const rotatingDots = Array.from({ length: 2 }, () => createDot(0, 0));
-    positionDotsOnCircle(circle1, rotatingDots, circle1Rect.width / 2, 20);
+        const rotatingDots = Array.from(
+            { length: CONFIG.animation.dotsCount.rotating }, 
+            () => createDot(0, 0)
+        );
+        
+        animateDotsAroundCircle(
+            circle1, 
+            rotatingDots, 
+            circle1Rect.width / 2 + 26, 
+            (2 * Math.PI) / CONFIG.animation.rotationDuration
+        );
 
-    // Add moving dots along the lines
-    const horizontalDots = Array.from({ length: 2 }, () => createDot(0, circle2CenterY));
-    const verticalDots = Array.from({ length: 2 }, () => createDot(circle2CenterX, 0));
+        const horizontalDots = Array.from(
+            { length: CONFIG.animation.dotsCount.horizontal }, 
+            () => createDot(0, circle2CenterY)
+        );
+        const verticalDots = Array.from(
+            { length: CONFIG.animation.dotsCount.vertical }, 
+            () => createDot(circle2CenterX, 0)
+        );
 
-    // Initialize positions for horizontal and vertical dots
-    horizontalDots.forEach((dot, index) => {
-        dot.style.left = `${index * 900}px`;
-        dot.style.top = `${circle2CenterY}px`;
-    });
+        horizontalDots.forEach((dot, index) => {
+            dot.style.left = `${index * 900}px`;
+            dot.style.top = `${circle2CenterY}px`;
+        });
 
-    verticalDots.forEach((dot, index) => {
-        dot.style.left = `${circle2CenterX}px`;
-        dot.style.top = `${index * 400}px`;
-    });
+        verticalDots.forEach((dot, index) => {
+            dot.style.left = `${circle2CenterX}px`;
+            dot.style.top = `${index * 400}px`;
+        });
 
-    // Animate dots along the lines
-    animateDotsOnLines(horizontalDots, true, 2);
-    animateDotsOnLines(verticalDots, false, 2);
+        animateDotsOnLines(horizontalDots, true, CONFIG.animation.dotSpeed);
+        animateDotsOnLines(verticalDots, false, CONFIG.animation.dotSpeed);
 
-    // Initial position update
-    updateCirclePositions(circle1, circle2, line1, line2);
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => updateCirclePositions(circle1, circle2, line1, line2), 100);
+        });
 
-    // Add resize event listener with debounce
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => updateCirclePositions(circle1, circle2, line1, line2), 100);
-    });
+        updateCirclePositions(circle1, circle2, line1, line2);
+    }
+    
+    initialize();
 });

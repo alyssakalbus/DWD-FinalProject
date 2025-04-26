@@ -3,15 +3,14 @@
 ========================== */
 :root {
   --font-family: "font", sans-serif;
-  --font-size: 14px;
-  --line-height: 1.5;
+  --heading-font-size: 3rem;
+  --font-size: 1rem;
+  --line-height: 1;
   --font-weight: 100;
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-gray: #454545;
-  --color-gray-dark: #333333;
   --background-color: #000000;
-  --transition: 0.3s ease;
+  --transition: 0.5s ease;
   --border-radius: 5px;
   --circle-border-color: var(--color-white);
   --circle-background: transparent;
@@ -61,7 +60,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem;
+  padding: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,8 +69,11 @@ header {
 
 header h1 {
   text-transform: uppercase;
+  font-size: var(--heading-font-size);
+  font-weight: var(--font-weight);
   color: var(--color-white);
   margin: 0;
+  max-width: 2.5rem;
 }
 
 /* ==========================
@@ -81,7 +83,7 @@ nav {
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: .15rem;
+  gap: .5rem;
   z-index: 10;
   align-items: left;
   width: 300px;
@@ -93,17 +95,16 @@ nav a {
   text-decoration: none;
   padding: 0.1rem .2rem;
   border-radius: var(--border-radius);
-  transition: background-color var(--transition), transform var(--transition);
+  transition: transform var(--transition);
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
   transform: translateY(-4px);
 }
 
 nav a.active {
-  background-color: rgba(255, 255, 255, 0.4);
-  color: var(--color-black);
+  text-decoration: underline;
 }
 
 /* ==========================
@@ -111,42 +112,51 @@ nav a.active {
 ========================== */
 button,
 .cta-button {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
   text-transform: uppercase;
-  padding: 1rem 2rem;
-  background: var(--color-gray);
-  color: var(--color-black);
-  border-radius: 10px;
-  transition: transform var(--transition), background-color var(--transition);
+  text-align: center;
+  padding: 1rem;
+  color: var(--color-white);
+  background: transparent;
+  border: none;
+  transition: transform var(--transition);
+  text-decoration: none;
 }
 
 button:hover,
 .cta-button:hover {
   transform: translateY(-4px);
+  text-decoration: underline;
 }
 
 button:active,
 .cta-button:active {
-  background: var(--color-gray-dark);
   transform: translateY(2px);
+  text-decoration: underline;
 }
 
 /* ==========================
    Forms
 ========================== */
 .login-form {
-  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 15px;
   max-width: 400px;
   margin: 0 auto;
+  z-index: 1001;
+  position: relative;
+  text-transform: uppercase;
 }
 
 .login-form .form-group input {
   width: 100%;
   padding: 0.75rem;
+  margin: .5rem 0;
   border: none;
   border-radius: var(--border-radius);
-  background: rgba(255, 255, 255, 0.9);
   color: var(--color-black);
 }
 
@@ -198,6 +208,18 @@ button:active,
   to {
     transform: rotate(360deg) translate(-50%, -50%);
   }
+}
+
+/* ==========================
+   Video Background
+========================== */
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
 }
 
 /* Prevent scrollbars */
