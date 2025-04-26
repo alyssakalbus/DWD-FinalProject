@@ -17,7 +17,7 @@ body {
     background: #000;
     color: #fff;
     font-family: 'font', sans-serif;
-    font-size: 16px; /* Uniform text size */
+    font-size: 16px;
     line-height: 1.5;
     margin: 0;
     padding: 1rem;
@@ -44,8 +44,8 @@ header {
 }
 
 header h1 {
-    text-transform: uppercase; /* Make header text all caps */
-    color: #fff; /* Ensure text color is consistent */
+    text-transform: uppercase;
+    color: #fff;
     margin: 0;
 }
 
@@ -99,14 +99,30 @@ footer {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Circle Styles */
+.circle {
+    width: 850px;
+    height: 850px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    z-index: 0;
+}
+
 /* Navigation */
 nav {
     margin-bottom: 2rem;
     text-transform: uppercase;
     display: flex;
-    flex-direction: column; /* Stack links vertically */
-    align-items: flex-start; /* Align links to the left */
-    gap: 1rem; /* Add spacing between links */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    z-index: 10;
+    position: relative;
 }
 
 nav a {
@@ -115,23 +131,23 @@ nav a {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%; /* Make links take full width if needed */
+    width: 100%;
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-4px); /* Add hover effect */
+    transform: translateY(-4px);
 }
 
 nav a:active {
-    background-color: rgba(255, 255, 255, 0.4); /* Darker background for active state */
-    transform: translateY(2px); /* Slightly pressed effect */
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
 }
 
 /* Active State for Navigation Links */
 nav a.active {
-    background-color: rgba(255, 255, 255, 0.4); /* Highlight color for active state */
-    color: #000; /* Optional: Change text color */
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #000;
 }
 
 /* Buttons */
@@ -149,8 +165,8 @@ button:hover, .cta-button:hover {
 }
 
 button:active, .cta-button:active {
-    background: #333; /* Darker background for active state */
-    transform: translateY(2px); /* Slightly pressed effect */
+    background: #333;
+    transform: translateY(2px);
 }
 
 /* Forms */
@@ -173,16 +189,4 @@ button:active, .cta-button:active {
 
 .form-group input:focus {
     outline: 2px solid #fff;
-}
-
-/* Circle Styles */
-.circle {
-    width: 100px;
-    height: 100px;
-    background-color: #ff0000; /* Red color */
-    border-radius: 50%; /* Makes it a circle */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the circle */
 }
