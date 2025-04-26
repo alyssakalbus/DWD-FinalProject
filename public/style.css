@@ -1,192 +1,207 @@
+/* ==========================
+   Variables
+========================== */
+:root {
+  --font-family: "font", sans-serif;
+  --font-size: 14px;
+  --line-height: 1.5;
+  --font-weight: 100;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #454545;
+  --color-gray-dark: #333333;
+  --background-color: #000000;
+  --transition: 0.3s ease;
+  --border-radius: 5px;
+  --circle-border-color: var(--color-white);
+  --circle-background: transparent;
+}
+
+/* ==========================
+   Base Styles
+========================== */
 /* Custom Font */
 @font-face {
-    font-family: 'font';
-    src: url('/fonts/Heming Variable.ttf') format('truetype');
-    font-display: swap;
+  font-family: "font";
+  src: url("/fonts/Heming Variable.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 100 900;
 }
 
-/* Reset */
+/* Reset Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Base Styles */
 body {
-    background: #000;
-    color: #fff;
-    font-family: 'font', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    overflow: hidden;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--color-white);
+  background: var(--background-color);
+  font-weight: var(--font-weight);
 }
 
-/* Header */
+/* ==========================
+   Layout
+========================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ==========================
+   Header
+========================== */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
 header h1 {
-    text-transform: uppercase;
-    color: #fff;
-    margin: 0;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin: 0;
 }
 
-/* Main Layout */
-main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Card Layout */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.atvImg {
-    background: #d2d2d2;
-    border-radius: 20px;
-    width: 350px;
-    height: 580px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.atvImg:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* Circle Styles */
-.circle {
-    width: 850px;
-    height: 850px;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    background: transparent;
-    z-index: 0;
-}
-
-/* Navigation */
+/* ==========================
+   Navigation
+========================== */
 nav {
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    z-index: 10;
-    position: relative;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  z-index: 10;
+  align-items: left;
+  width: 300px;
 }
 
 nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.1rem .2rem;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition), transform var(--transition);
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
 }
 
-nav a:active {
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(2px);
-}
-
-/* Active State for Navigation Links */
 nav a.active {
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #000;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: var(--color-black);
 }
 
-/* Buttons */
-button, .cta-button {
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    background: #454545;
-    color: #000;
-    border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+/* ==========================
+   Buttons
+========================== */
+button,
+.cta-button {
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background: var(--color-gray);
+  color: var(--color-black);
+  border-radius: 10px;
+  transition: transform var(--transition), background-color var(--transition);
 }
 
-button:hover, .cta-button:hover {
-    transform: translateY(-4px);
+button:hover,
+.cta-button:hover {
+  transform: translateY(-4px);
 }
 
-button:active, .cta-button:active {
-    background: #333;
-    transform: translateY(2px);
+button:active,
+.cta-button:active {
+  background: var(--color-gray-dark);
+  transform: translateY(2px);
 }
 
-/* Forms */
+/* ==========================
+   Forms
+========================== */
 .login-form {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #000;
+.login-form .form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-black);
 }
 
-.form-group input:focus {
-    outline: 2px solid #fff;
+.login-form .form-group input:focus {
+  outline: 2px solid var(--color-white);
+}
+
+/* ==========================
+   Utility Classes
+========================== */
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/* ==========================
+   Circle Styles
+========================== */
+.circle {
+  border: 1px solid var(--circle-border-color);
+  border-radius: 50%;
+  position: absolute;
+  background: var(--circle-background);
+  z-index: 0;
+}
+
+/* ==========================
+   Crossed Lines
+========================== */
+.cross-line {
+  background-color: var(--color-white);
+  z-index: 1;
+}
+
+/* ==========================
+   Animations
+========================== */
+@keyframes rotate-circle {
+  from {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  to {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
+
+/* Prevent scrollbars */
+html, body {
+  overflow: hidden;
+  height: 100%; /* Ensure the body takes up the full viewport height */
 }
