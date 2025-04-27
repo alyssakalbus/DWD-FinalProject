@@ -3,10 +3,14 @@
 ========================== */
 :root {
   --font-family: "font", sans-serif;
-  --heading-font-size: 3rem;
+  --heading-font-size: 1rem;
+  --subheading-font-size: 1rem;
+  --form-font-size: .75rem;
   --font-size: 1rem;
   --line-height: 1;
   --font-weight: 100;
+  --heading-font-weight: 400;
+  --subheading-font-weight: 100;
   --color-white: #ffffff;
   --color-black: #000000;
   --background-color: #000000;
@@ -46,10 +50,23 @@ body {
 /* ==========================
    Layout
 ========================== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  position: absolute;
+  top: 70%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+main subhead {
+  text-transform: uppercase;
+  font-size: var(--subheading-font-size);
+  font-weight: var( --subheading-font-weight);
+  color: var(--color-white);
+  margin: 0;
 }
 
 /* ==========================
@@ -60,7 +77,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 3rem;
+  padding: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,10 +87,15 @@ header {
 header h1 {
   text-transform: uppercase;
   font-size: var(--heading-font-size);
-  font-weight: var(--font-weight);
+  font-weight: var( --heading-font-weight);
   color: var(--color-white);
   margin: 0;
   max-width: 2.5rem;
+}
+
+.home-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ==========================
@@ -117,7 +139,7 @@ button,
   font-weight: var(--font-weight);
   text-transform: uppercase;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
   color: var(--color-white);
   background: transparent;
   border: none;
@@ -141,13 +163,16 @@ button:active,
    Forms
 ========================== */
 .login-form {
-  backdrop-filter: blur(10px);
+  font-size: var(--form-font-size);
   padding: 2rem;
   border-radius: 15px;
   max-width: 400px;
-  margin: 0 auto;
+  position: fixed; /* <-- changed from relative to fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0; /* remove auto margin */
   z-index: 1001;
-  position: relative;
   text-transform: uppercase;
 }
 
@@ -218,12 +243,181 @@ button:active,
   position: fixed;
   right: 0;
   bottom: 0;
+  transform: translate(25%, 25%) scale(0.5); /* scales down to 50% */
   min-width: 100%; 
   min-height: 100%;
+  z-index: 0;
+}
+
+.filter{
+  filter: blur(8px) brightness(0.5);
 }
 
 /* Prevent scrollbars */
 html, body {
   overflow: hidden;
   height: 100%; /* Ensure the body takes up the full viewport height */
+}
+
+/* ==========================
+   DNA Animation
+========================== */
+
+:root {
+  --rotate-time: 4s;
+  --rotate-delay: 0.15s;
+  --lines-color: rgba(255, 255, 255, 0.4);
+  --lines-width: .5px;
+  --dots-color: rgba(255, 255, 255, 0.4);
+}
+
+body {
+  background-color: black;
+}
+
+#dna {
+  position: absolute;
+  top: 50%;
+  height: 240px;
+  left: 66.5%;
+  width: 800px;
+  margin-top: -375px;
+  margin-left: -20px;
+  perspective: 1000px;
+  transform: scale(0.4);
+}
+
+#dna div {
+  position: relative;
+  top: 50%;
+  left: 60px;
+  width: 2px;
+  height: 160px;
+  margin-top: -80px;
+  background-color: var(--lines-color);
+  float: left;
+  transform-style: preserve-3d;
+  margin-left: 20px;
+  animation: rotation var(--rotate-time) linear infinite;
+}
+
+#dna div::before,
+#dna div::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  height: 10px;
+  background-color: var(--dots-color);
+  border-radius: 5px;
+  animation: rotation var(--rotate-time) linear infinite reverse;
+  z-index: 1;
+}
+
+#dna div::before {
+  top: -10px;
+}
+
+#dna div::after {
+  bottom: -10px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+#dna div:nth-child(1) {
+  animation-delay: 0s;
+}
+#dna div:nth-child(2) {
+  animation-delay: 0.15s;
+}
+#dna div:nth-child(3) {
+  animation-delay: 0.30s;
+}
+#dna div:nth-child(4) {
+  animation-delay: 0.45s;
+}
+#dna div:nth-child(5) {
+  animation-delay: 0.60s;
+}
+#dna div:nth-child(6) {
+  animation-delay: 0.75s;
+}
+#dna div:nth-child(7) {
+  animation-delay: 0.90s;
+}
+#dna div:nth-child(8) {
+  animation-delay: 1.05s;
+}
+#dna div:nth-child(9) {
+  animation-delay: 1.20s;
+}
+#dna div:nth-child(10) {
+  animation-delay: 1.35s;
+}
+#dna div:nth-child(11) {
+  animation-delay: 1.50s;
+}
+#dna div:nth-child(12) {
+  animation-delay: 1.65s;
+}
+#dna div:nth-child(13) {
+  animation-delay: 1.80s;
+}
+#dna div:nth-child(14) {
+  animation-delay: 1.95s;
+}
+#dna div:nth-child(15) {
+  animation-delay: 2.10s;
+}
+#dna div:nth-child(16) {
+  animation-delay: 2.25s;
+}
+#dna div:nth-child(17) {
+  animation-delay: 2.40s;
+}
+#dna div:nth-child(18) {
+  animation-delay: 2.55s;
+}
+#dna div:nth-child(19) {
+  animation-delay: 2.70s;
+}
+#dna div:nth-child(20) {
+  animation-delay: 2.85s;
+}
+#dna div:nth-child(21) {
+  animation-delay: 3.00s;
+}
+#dna div:nth-child(22) {
+  animation-delay: 3.15s;
+}
+#dna div:nth-child(23) {
+  animation-delay: 3.30s;
+}
+#dna div:nth-child(24) {
+  animation-delay: 3.45s;
+}
+#dna div:nth-child(25) {
+  animation-delay: 3.60s;
+}
+#dna div:nth-child(26) {
+  animation-delay: 3.75s;
+}
+#dna div:nth-child(27) {
+  animation-delay: 3.90s;
+}
+#dna div:nth-child(28) {
+  animation-delay: 4.05s;
+}
+#dna div:nth-child(29) {
+  animation-delay: 4.20s;
+}
+#dna div:nth-child(30) {
+  animation-delay: 4.35s;
 }

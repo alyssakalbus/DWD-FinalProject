@@ -12,12 +12,29 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/about.html'));
+});
+
+app.get('/careers', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/careers.html'));
+});
+
+app.get('/lab', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/lab.html'));
+});
+
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/login.html'));
 });
 
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/about.html'));
+app.get('/pricing', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/pricing.html'));
+});
+
+
+app.get('/apply', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/apply.html'));
 });
 
 // Add login POST endpoint
