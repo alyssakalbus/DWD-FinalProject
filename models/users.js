@@ -5,8 +5,9 @@ const UserSchema = new Schema({
     name: String,
     email: String,
     birthday: String,
-    dna: String,
-    encrypted: String,
+    dnaSequence: String,
+    encryptedSequence: String,
+    password: String
 });
 
 const User = mongoose.model('User', UserSchema);

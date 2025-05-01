@@ -1,13 +1,21 @@
 const fs = require('fs');
 const path = require('path');
-
 const express = require('express');
-const app = express();
-
 const config = require('./config.js');
-
 const mongoose = require('mongoose');
-const users = require('./models/users');
+const bcrypt = require('bcrypt');
+const User = require('./models/users'); // Changed variable name to match usage below
+
+const app = express();
+const port = config.PORT || 3000;
+const saltRounds = 10;  // bcrypt salt rounds
+
+// Handle data
+app.use(express.json());
+const publicURL = path.resolve(`${__dirname}/public`);
+
+// server
+app.use(express.static(publicURL));
 
 function encryptDNA(dna) {
     return dna
@@ -23,40 +31,10 @@ mongoose.connect(config.MONGODB_URI || 'mongodb://localhost:27017/dwd-finalproje
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
 
-const port = config.PORT || 3000;
-
-// Handle data
-app.use(express.json());
-const publicURL = path.resolve(`${__dirname}/public`);
-
-// server
-app.use(express.static(publicURL));
-
-
-
-// User Endpoints //
-
-// Create User
-app.post("/api/v1/users", async (req, res) => {
-    try {
-        const newData = {
-
-            name: req.body.name,
-            email: req.body.email,
-            birthday: req.body.birthday
-        }
-        const data = await users.create(newData);
-        res.json({data})
-    } catch (error) {
-        console.error(error);
-        res.json(error);
-    }
-});
-
-// Get Users
+// Get All Users
 app.get("/api/v1/users", async (req, res) => {
     try {
-        const data = await users.find();
+        const data = await User.find(); // Changed users to User
         res.json({data})
     } catch (error) {
         console.error(error);
@@ -64,7 +42,39 @@ app.get("/api/v1/users", async (req, res) => {
     }
 });
 
-// Create New Encoding
+// Create a new user with hashed password and encrypted DNA sequence
+app.post('/api/v1/users', async (req, res) => {
+    try {
+        const { name, email, birthday, dnaSequence, password } = req.body;
+
+        if (!password || password.length < 8) {
+            return res.status(400).json({ error: "Password must be at least 8 characters long." });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, saltRounds); 
+        const encrypted = encryptDNA(dnaSequence);
+
+        const newUser = await User.create({
+            name,
+            email,
+            birthday,
+            dnaSequence,
+            encryptedSequence: encrypted,
+            password: hashedPassword
+        });
+
+        res.json({
+            id: newUser._id,
+            encryptedSequence: newUser.encryptedSequence,
+            message: "DNA successfully encoded and stored."
+        });
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// User Login w/ hashed password verification
 app.put("/api/v1/users/:id", async (req, res) => {
     try {
         const updatedData = {
@@ -73,7 +83,7 @@ app.put("/api/v1/users/:id", async (req, res) => {
             birthday: req.body.birthday
         };
 
-        const data = await users.findOneAndUpdate(
+        const data = await User.findOneAndUpdate( // Changed users to User
             { _id: req.params.id },
             updatedData,
             { new: true }
@@ -89,7 +99,7 @@ app.put("/api/v1/users/:id", async (req, res) => {
 
 app.delete("/api/v1/users/:id", async (req, res) => {
     try {
-        const deletedDocument = await users.findOneAndDelete({ _id: req.params.id });
+        const deletedDocument = await User.findOneAndDelete({ _id: req.params.id }); // Changed users to User
         res.json({
             message: "Successfully removed item",
             data: deletedDocument
@@ -100,7 +110,29 @@ app.delete("/api/v1/users/:id", async (req, res) => {
     }
 });
 
-// serve static files from the 'public' directory
+// Clear the database (only in development mode)
+// curl -X DELETE http://localhost:3000/api/v1/clear-database
+app.delete('/api/v1/clear-database', async (req, res) => {
+    // For safety, only allow this in development environment
+    if (process.env.NODE_ENV !== 'production') {
+        try {
+            // Clear the users collection
+            await User.deleteMany({});
+            
+            // If you have other collections, clear them here
+            // await OtherModel.deleteMany({});
+            
+            res.json({ message: 'Database cleared successfully' });
+        } catch (error) {
+            console.error('Error clearing database:', error);
+            res.status(500).json({ error: error.message });
+        }
+    } else {
+        res.status(403).json({ error: 'This operation is not allowed in production' });
+    }
+});
+
+// multipage routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'));
 });
