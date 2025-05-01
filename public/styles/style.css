@@ -162,21 +162,23 @@ button:active,
 /* ==========================
    Forms
 ========================== */
-.login-form {
+.login-form,
+.signup-form {
   font-size: var(--form-font-size);
   padding: 2rem;
   border-radius: 15px;
   max-width: 400px;
-  position: fixed; /* <-- changed from relative to fixed */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0; /* remove auto margin */
+  margin: 0;
   z-index: 1001;
   text-transform: uppercase;
 }
 
-.login-form .form-group input {
+.login-form .form-group input,
+.signup-form .form-group input {
   width: 100%;
   padding: 0.75rem;
   margin: .5rem 0;
@@ -185,8 +187,76 @@ button:active,
   color: var(--color-black);
 }
 
-.login-form .form-group input:focus {
-  outline: 2px solid var(--color-white);
+.signup-form h2 {
+  text-align: center;
+  font-weight: var(--font-weight);
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight);
+  color: var(--color-white);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: none;
+  color: var(--color-text-secondary, #ffffff);
+}
+
+.form-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text, #ffffff);
+}
+
+.form-footer a {
+  color: var(--color-link, #ffffff);
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.message-container {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--border-radius, 4px);
+  font-size: 0.875rem;
+  display: none;
+  text-transform: none;
+}
+
+.success-message {
+  background-color: #c6f6d5;
+  color: #276749;
+  border: 1px solid #9ae6b4;
+}
+
+.error-message {
+  background-color: #fed7d7;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .login-form,
+  .signup-form {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
 }
 
 /* ==========================

@@ -42,6 +42,46 @@ app.get("/api/v1/users", async (req, res) => {
     }
 });
 
+// Login User
+app.post('/api/v1/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        
+        // Find user by email
+        const user = await User.findOne({ email });
+        
+        // Check if user exists
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid email or password' });
+        }
+        
+        // Compare passwords
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        
+        if (!isPasswordValid) {
+            return res.status(401).json({ error: 'Invalid email or password' });
+        }
+        
+        // Password is valid, create a session or token
+        // For basic implementation, just return user data
+        // For production, implement proper JWT or session-based authentication
+        
+        res.json({
+            userId: user._id,
+            name: user.name,
+            email: user.email,
+            encryptedSequence: user.encryptedSequence,
+            message: 'Login successful'
+            // token: generateToken(user) // If implementing JWT
+        });
+        
+    } catch (error) {
+        console.error('Login error:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 // Create a new user with hashed password and encrypted DNA sequence
 app.post('/api/v1/users', async (req, res) => {
     try {
@@ -158,8 +198,8 @@ app.get('/pricing', (req, res) => {
 });
 
 
-app.get('/apply', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/apply.html'));
+app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/signup.html'));
 });
 
 // listen on port
