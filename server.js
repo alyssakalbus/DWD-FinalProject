@@ -1,8 +1,27 @@
 const fs = require('fs');
 const path = require('path');
+
 const express = require('express');
 const app = express();
+
 const config = require('./config.js');
+
+const mongoose = require('mongoose');
+const users = require('./models/users');
+
+function encryptDNA(dna) {
+    return dna
+        .split('')
+        .sort(() => Math.random() - 0.5)
+        .join('');
+}
+
+mongoose.connect(config.MONGODB_URI || 'mongodb://localhost:27017/dwd-finalproject', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 const port = config.PORT || 3000;
 
@@ -12,6 +31,74 @@ const publicURL = path.resolve(`${__dirname}/public`);
 
 // server
 app.use(express.static(publicURL));
+
+
+
+// User Endpoints //
+
+// Create User
+app.post("/api/v1/users", async (req, res) => {
+    try {
+        const newData = {
+
+            name: req.body.name,
+            email: req.body.email,
+            birthday: req.body.birthday
+        }
+        const data = await users.create(newData);
+        res.json({data})
+    } catch (error) {
+        console.error(error);
+        res.json(error);
+    }
+});
+
+// Get Users
+app.get("/api/v1/users", async (req, res) => {
+    try {
+        const data = await users.find();
+        res.json({data})
+    } catch (error) {
+        console.error(error);
+        res.json(error);
+    }
+});
+
+// Create New Encoding
+app.put("/api/v1/users/:id", async (req, res) => {
+    try {
+        const updatedData = {
+            name: req.body.name,
+            email: req.body.email,
+            birthday: req.body.birthday
+        };
+
+        const data = await users.findOneAndUpdate(
+            { _id: req.params.id },
+            updatedData,
+            { new: true }
+        );
+
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
+app.delete("/api/v1/users/:id", async (req, res) => {
+    try {
+        const deletedDocument = await users.findOneAndDelete({ _id: req.params.id });
+        res.json({
+            message: "Successfully removed item",
+            data: deletedDocument
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // serve static files from the 'public' directory
 app.get('/', (req, res) => {
@@ -41,62 +128,6 @@ app.get('/pricing', (req, res) => {
 
 app.get('/apply', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/apply.html'));
-});
-
-// Add login POST endpoint
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    // Here you would typically:
-    // 1. Validate the credentials
-    // 2. Check against a database
-    // 3. Create a session
-    // For now, we'll just send a response
-    res.json({ message: 'Login functionality coming soon' });
-});
-
-// API Endpoints w/ CRUD operations
-
-app.get("/api/v1/finalproject", async (req, res) => {
-    try {
-        const data = await finalproject.find();
-        res.json({})
-    } catch (error) {
-        console.error(error);
-        res.json(error);
-    }
-});
-
-app.post("/api/v1/finalproject", async (req, res) => {
-    try {
-        const newData = {
-            // EDIT THIS
-            todo: req.body.todo,
-            status: req.body.status
-        }
-        const data = await todos.create(newData);
-        res.json({})
-    } catch (error) {
-        console.error(error);
-        res.json(error);
-    }
-});
-
-app.put("/api/v1/finalproject", async (req, res) => {
-    try {
-        res.json({})
-    } catch (error) {
-        console.error(error);
-        res.json(error);
-    }
-});
-
-app.delete("/api/v1/finalproject", async (req, res) => {
-    try {
-        res.json({})
-    } catch (error) {
-        console.error(error);
-        res.json(error);
-    }
 });
 
 // listen on port

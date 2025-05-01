@@ -260,3 +260,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     initialize();
 });
+
+// DNA Animation
+document.addEventListener("DOMContentLoaded", () => {
+    const bars = document.querySelectorAll("#dna div");
+    const delayStep = 0.15; // seconds
+    bars.forEach((bar, i) => {
+      bar.style.animationDelay = `${(i * delayStep).toFixed(2)}s`;
+    });
+  });
