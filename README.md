@@ -5,6 +5,9 @@ Final Project for DWD @ NYU ITP
 I was unable to get this to run on Glitch because the database would not authenticate.
 
 ## Research and Background
+
+**Research Questions, Criticisms, and Observations**
+
 **Research Questions, Criticisms, and Observations**
 - What can the intentions and outcomes of tech research and products reveal about our future?
 - How does the illusion of agency shape our interactions with technology?
@@ -25,28 +28,12 @@ This week, I was inspired to create an interaction that goes against these stand
 
 While moodboarding, I also came across some designs with a strong grid but with letter-spacing (kerning) much tighter than typical Swiss posters.
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_MoodBoard_1.jpg" width="300"/><br>
-      Mood Board Image 1
-    </td>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_MoodBoard_2.jpg" width="300"/><br>
-      Mood Board Image 2
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_MoodBoard_3.gif" width="300"/><br>
-      Mood Board Image 3
-    </td>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_MoodBoard_4.jpg" width="300"/><br>
-      Mood Board Image 4
-    </td>
-  </tr>
-</table>
+## 📸 Project Preview
+
+| ![](path/to/image1.png) | ![](path/to/image2.png) | ![](path/to/image3.png) |
+|------------------------|------------------------|------------------------|
+| ![](path/to/image4.png) | ![](path/to/image5.png) | ![](path/to/image6.png) |
+
 
 ## Sketches, Wireframes, and Style Guide
 
