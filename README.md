@@ -1,8 +1,8 @@
 # Dynamic Web Development x Bioart as Biopolitics Final Project
 
-**I was unable to get this to run on Glitch because the database would't authenticate.**
+🚨 **I was unable to get this to run on Glitch because the database would't authenticate.**
 
-## 🚨 How to Set Up and Run
+## How to Set Up and Run
 1. Download .zip
 2. Open in VSCode
 3. Open Terminal
