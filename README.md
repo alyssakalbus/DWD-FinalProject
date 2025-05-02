@@ -97,11 +97,11 @@ Lorem Ipsum
   </tr>
   <tr>
     <td align="center">
-      <img src="/process/process_final_03.png" width="450"/><br/>
+      <img src="/process/final_03.png" width="450"/><br/>
       <sub>Wireframe 2</sub>
     </td>
     <td align="center">
-      <img src="/process/process_final_04.png" width="450"/><br/>
+      <img src="/process/final_04.png" width="450"/><br/>
       <sub>Wireframe 3</sub>
     </td>
   </tr>
