@@ -1,9 +1,14 @@
 # Dynamic Web Development x Bioart as Biopolitics Final Project
 
-I was unable to get this to run on Glitch because the database would not authenticate.
+**I was unable to get this to run on Glitch because the database would't authenticate.**
 
-## How to Run
-npm start
+## 🚨 How to Set Up and Run
+1. Download .zip
+2. Open in VSCode
+3. Open Terminal
+4. Install Dependiencies (express, mongoose, bcrypt, etc.)
+5. Dev Mode -> npm run dev
+6. Start -> npm start
 
 ## Original Project Proposal
 
@@ -20,7 +25,8 @@ npm start
 
 In a near future where DNA is treated as just another dataset, people’s genetic data is treated similarly to your online activity. Insurance and marketing companies are able to predict everything about you based on your genetic predispositions, and doctor’s office’s are constantly hacked to obtain new, updated datasets, and are often shared with state surveillance agencies. This wellness-centered service that frames bio-encryption as the next stage of “wellness” and “mindfulness,” offering genetic editing therapies to confuse and throw off algorithms, but the only people that can afford the service are those who collected the data in the first place. My process will be a mix of writing, worldbuilding, and a final web development project. The website will be a critical look into a potential future regarding the increasing practice of highly invasive biometric surveillance practices and genetic ownership.
 
-## Project Outcome
+## Project Outcome & Next Steps
+The API I ended up building was quite difficult. The "encryption" thing seemed too simple, so I decided to teach myself how to set up a log in / sign up / user dashboard funciton. I'm eventually thinking about this site site being believeable complete with a marketing video and a speculative product of some kind. 
 
 ## Mood Board and Inspiration
 
