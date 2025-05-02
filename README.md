@@ -86,14 +86,24 @@ Lorem Ipsum
 
 <table>
   <tr>
-    <td align="center"><img src="/process/process_moodboard01.png" width="200"/><br/><sub>Final 1</sub></td>
-    <td align="center"><img src="/process/process_moodboard01.png" width="200"/><br/><sub>Final 2</sub></td>
-    <td align="center"><img src="/process/process_moodboard01.png" width="200"/><br/><sub>Final 3</sub></td>
+    <td align="center">
+      <img src="/process/final_01.png" width="450"/><br/>
+      <sub>Sketch</sub>
+    </td>
+    <td align="center">
+      <img src="/process/final_02.png" width="450"/><br/>
+      <sub>Wireframe 1</sub>
+    </td>
   </tr>
   <tr>
-    <td align="center"><img src="/process/process_moodboard01.png" width="200"/><br/><sub>Final 4</sub></td>
-    <td align="center"><img src="/process/process_moodboard01.png" width="200"/><br/><sub>Final 5</sub></td>
-    <td align="center"><img src="/process/process_moodboard01.png" width="200"/><br/><sub>Final 6</sub></td>
+    <td align="center">
+      <img src="/process/process_final_03.png" width="450"/><br/>
+      <sub>Wireframe 2</sub>
+    </td>
+    <td align="center">
+      <img src="/process/process_final_04.png" width="450"/><br/>
+      <sub>Wireframe 3</sub>
+    </td>
   </tr>
 </table>
 
