@@ -51,11 +51,18 @@ DNA Steganography is the process of embedding secret content into strands of syn
 - Rueda J. Affordable pricing of CRISPR treatments is a pressing ethical imperative. CRISPR J. 2024;7(1):1–3. PMID: 39392045.
 - "Electroporation." ScienceDirect.
 
+## API Functions
+
+- Sign Up: create a user with a unique id -> saves to database
+- Log In: user enters credentials -> log user in -> send user to dashboard
+- Password Hashing: user creates a password -> bcrypt hashes it -> saves to database
+- Password Authentican: user logs in -> compares password with database -> logs user in
+- DNA "Encryption": user enters a dna sequence -> scramble data -> saves to database
+- Show User Content: user logs in -> show user data in the dashboard
+
 
 ## Project Outcome & Next Steps
 The API I ended up building was quite difficult. The mock "encryption" thing seemed too simple and didn't make sense for the project I ultimately want to make, so I decided to teach myself how to set up a log in / sign up / user dashboard funciton. I'm eventually thinking about this site site being believeable complete with a promo video and a speculative product of some kind. 
-
-## Development Process
 
 
 ## Mood Board and Inspiration
