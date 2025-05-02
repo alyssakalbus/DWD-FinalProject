@@ -24,8 +24,6 @@ In a near future where DNA is treated as just another dataset, people’s geneti
 
 ## Mood Board and Inspiration
 
-Lorem Ipsum
-
 <table>
   <tr>
     <td align="center"><img src="/process/process_moodboard_01.png" width="200"/><br/><sub>Caption 1</sub></td>
@@ -47,12 +45,6 @@ Lorem Ipsum
 ---
 
 ## Sketches and Wireframes
-
-Lorem Ipsum
-
-## Sketches and Wireframes
-
-Lorem Ipsum
 
 <table>
   <tr>
@@ -80,9 +72,7 @@ Lorem Ipsum
 
 ---
 
-## Final Design (Screenshots from Local Deployment)
-
-Lorem Ipsum
+## Final Design (Screenshots)
 
 <table>
   <tr>
