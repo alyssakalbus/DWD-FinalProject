@@ -7,72 +7,41 @@ I was unable to get this to run on Glitch because the database would not authent
 ## Research and Background
 
 **Research Questions, Criticisms, and Observations**
-
-**Research Questions, Criticisms, and Observations**
-- What can the intentions and outcomes of tech research and products reveal about our future?
-- How does the illusion of agency shape our interactions with technology?
-- How does our understanding of history influence tech literacy?
-- How can our knowledge of history allow us to critique systems beyond the market-centered idea of success?
-- Can we separate the history of a technology from it’s current state?
+- What can the intentions and outcomes of military research reveal about future products and services?
+- How does the illusion of user agency shape our interactions with technology?
+- How does our understanding of history influence technology literacy?
+- Can we separate the history of a technology from it’s current uses?
 - People seem very willing to give up their data, genetic or otherwise, in exchange for a sense of belonging or security.
-- How can humor be used in a speculative work to entice critical reflection on our relationships to technology and data / genetic privacy or ownership?
-- **Why do people often feel a sense of ownership or perceive authority in intangible products?**
-- **If biometric ownership, security, and encryption becomes a luxury service, what happens to those who can’t afford to encrypt themselves?**
+- How can humor or satire be used in a speculative work to entice critical reflection on our relationships to technology and data / genetic privacy or ownership?
+- Why do people often feel a sense of ownership or perceive authority in intangible products?
+- If biometric ownership, security, and encryption becomes a luxury service, what happens to those who can’t afford to encrypt themselves?
 - What does it mean for DNA to be “secure,” and who is defining the metrics of security?
+
+In a near future where DNA is treated as just another dataset, people’s genetic data is treated similarly to your online activity. Insurance and marketing companies are able to predict everything about you based on your genetic predispositions, and doctor’s office’s are constantly hacked to obtain new, updated datasets, and are often shared with state surveillance agencies. The wellness-centered service that frames bio-encryption as the next stage of “wellness” and “mindfulness,” offering genetic editing therapies to confuse and throw off algorithms. My process will be a mix of writing, worldbuilding, and a final web development project. The website will be a critical look into a potential future regarding the increasing practice of highly invasive biometric surveillance practices and genetic ownership.
 
 ## Mood Board and Inspiration
 
-I've done UI/UX work for the past couple of years, and while I do enjoy making websites, I hate the standard conventions around how they're supposed to look, act, and feel. I miss the days when websites were more fun and had more life. I understand accessibility issues, but I also just want to make things.
+Lorem Ipsum
 
-This week, I was inspired to create an interaction that goes against these standards. I was really drawn to the idea of working with physics and having an object behave differently every time you load the page. I found some examples that embody that idea while still maintaining a Swiss-style grid structure.
-
-While moodboarding, I also came across some designs with a strong grid but with letter-spacing (kerning) much tighter than typical Swiss posters.
-
-## 📸 Project Preview
-
-| ![](path/to/image1.png) | ![](path/to/image2.png) | ![](path/to/image3.png) |
+| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
 |------------------------|------------------------|------------------------|
-| ![](path/to/image4.png) | ![](path/to/image5.png) | ![](path/to/image6.png) |
+| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
 
 
-## Sketches, Wireframes, and Style Guide
+## Sketches and Wireframes
 
-I wish I had more time to spend on design, but I also wanted to spent a good bulk of time exploring interaction. I use very minimal generative AI when I work so I spent a lot of time figuring certain things out.
+Lorem Ipsum
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_Sketch.png" width="300"/><br>
-      Rough Sketches
-    </td>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_Wireframes.png" width="300"/><br>
-      Figma Wireframes - B&W and Layout
-    </td>
-  </tr>
-</table>
+| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
+|------------------------|------------------------|------------------------|
+| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
+
 
 ## Final Design (Still Kind of WIP)
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://raw.githubusercontent.com/alyssakalbus/DWD-Grids/main/process/DWD_Week2_OnLoad.gif" width="400"/><br>
-      On Load
-    </td>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_Interaction_1.gif" width="400"/><br>
-      Interaction
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://raw.githubusercontent.com/alyssakalbus/DWD-Grids/main/process/DWD_Week2_Responsive_1.gif" width="400"/><br>
-      Responsive #1 - Need to Add a Third Breakpoint
-    </td>
-    <td align="center">
-      <img src="https://github.com/alyssakalbus/DWD-Grids/blob/main/process/DWD_Week2_Interaction_2.gif" width="400"/><br>
-      Responsive #2 - Need to Adjust Interaction for Mobile
-    </td>
-  </tr>
-</table>
+Lorem Ipsum
+
+| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
+|------------------------|------------------------|------------------------|
+| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
+
