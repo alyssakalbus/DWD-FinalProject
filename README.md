@@ -26,19 +26,19 @@ In a near future where DNA is treated as just another dataset, people’s geneti
 
 <table>
   <tr>
-    <td align="center"><img src="/process/process_moodboard_01.png" width="200"/><br/><sub>Caption 1</sub></td>
-    <td align="center"><img src="/process/process_moodboard_02.png" width="200"/><br/><sub>Caption 2</sub></td>
-    <td align="center"><img src="/process/process_moodboard_03.png" width="200"/><br/><sub>Caption 3</sub></td>
+    <td align="center"><img src="/process/process_moodboard_01.png" width="200"/><br/><sub>Colossol - Real Bioengineering Company</sub></td>
+    <td align="center"><img src="/process/process_moodboard_02.png" width="200"/><br/><sub>Palantir - Data Company</sub></td>
+    <td align="center"><img src="/process/process_moodboard_03.png" width="200"/><br/><sub>Layout Reference</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="/process/process_moodboard_04.png" width="200"/><br/><sub>Caption 4</sub></td>
-    <td align="center"><img src="/process/process_moodboard_05.png" width="200"/><br/><sub>Caption 5</sub></td>
-    <td align="center"><img src="/process/process_moodboard_06.png" width="200"/><br/><sub>Caption 6</sub></td>
+    <td align="center"><img src="/process/process_moodboard_04.png" width="200"/><br/><sub>Style Reference</sub></td>
+    <td align="center"><img src="/process/process_moodboard_05.png" width="200"/><br/><sub>Style Reference for Navigation</sub></td>
+    <td align="center"><img src="/process/process_moodboard_06.png" width="200"/><br/><sub>DNA Animation Reference</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="/process/process_moodboard_07.png" width="200"/><br/><sub>Caption 7</sub></td>
-    <td align="center"><img src="/process/process_moodboard_08.png" width="200"/><br/><sub>Caption 8</sub></td>
-    <td align="center"><img src="/process/process_moodboard_09.webp" width="200"/><br/><sub>Caption 9</sub></td>
+    <td align="center"><img src="/process/process_moodboard_07.png" width="200"/><br/><sub>Style Reference</sub></td>
+    <td align="center"><img src="/process/process_moodboard_08.png" width="200"/><br/><sub>Type and Navigation Style Reference</sub></td>
+    <td align="center"><img src="/process/process_moodboard_09.webp" width="200"/><br/><sub>Original Xbox UI Design - Really Like the Idea of Circle UI</sub></td>
   </tr>
 </table>
 
