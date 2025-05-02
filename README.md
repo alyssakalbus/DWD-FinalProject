@@ -2,7 +2,7 @@
 
 I was unable to get this to run on Glitch because the database would not authenticate.
 
-## for DWD -> How to Run
+## How to Run
 npm start
 
 ## Original Project Proposal
