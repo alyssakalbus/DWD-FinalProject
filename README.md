@@ -52,14 +52,24 @@ Lorem Ipsum
 
 <table>
   <tr>
-    <td align="center"><img src="/process/process_sketch.png" width="200"/><br/><sub>Sketch</sub></td>
-    <td align="center"><img src="/process/process_wireframe_01.png" width="200"/><br/><sub>Wireframe 1</sub></td>
-    <td align="center"><img src="/process/process_wireframe_02.png" width="200"/><br/><sub>Wireframe 2</sub></td>
+    <td align="center">
+      <img src="/process/process_sketch.png" width="250"/><br/>
+      <sub>Sketch</sub>
+    </td>
+    <td align="center">
+      <img src="/process/process_wireframe_01.png" width="250"/><br/>
+      <sub>Wireframe 1</sub>
+    </td>
   </tr>
   <tr>
-    <td align="center"><img src="/process/process_wireframe_03.png" width="200"/><br/><sub>Wireframe 3</sub></td>
-    <td></td>
-    <td></td>
+    <td align="center">
+      <img src="/process/process_wireframe_02.png" width="250"/><br/>
+      <sub>Wireframe 2</sub>
+    </td>
+    <td align="center">
+      <img src="/process/process_wireframe_03.png" width="250"/><br/>
+      <sub>Wireframe 3</sub>
+    </td>
   </tr>
 </table>
 
