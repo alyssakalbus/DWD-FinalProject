@@ -32,14 +32,25 @@ In a near future where DNA is treated as just another dataset, people’s geneti
 
 DNA Steganography is the process of embedding secret content into strands of synthetic or modified DNA in a way that is undetectable unless they have the “key” to decode it. Secret content can be embedded in DNA by translating DNA nucleotides (A, T, C, and G) into ASCII (A= 00, T = 11, C = 01, G = 10). The content’s (messages, imagery, software, etc.) binary data is converted to a string of ATCG letters and embedded within the DNA sequence. Only someone with the key, which would most likely be a PCR Primer that binds the message-containing strand, would be able to amplify and have access to the hidden content. This kind of process can also be combined with sythetic DNA practices to physically encode people's DNA. 
 
+### **How does it work, and how much does it cost?**
+
+| **Service Step**       | **What It Covers**                                                                 | **Current Cost** | **Estimated Cost (2045)**               |
+|------------------------|-------------------------------------------------------------------------------------|------------------|------------------------------------------|
+| **Data Encoding**      | Steganographic embedding of encrypted biometric ID into synthetic DNA.            | $2M              | ~$3.7M                                   |
+| **Gene Editing**       | CRISPR-based full-body encryption therapy.                                        | $2M              | ~$3.7M                                   |
+| **Delivery Method**    | Electroporation treatment, luxury neural interface, bioelectric spa experience.   | $4M              | ~$7.4M                                   |
+| **Ongoing Maintenance**| Annual genome scrambling updates to stay ahead of decoding algorithms.            | $1M              | ~$1.85M                                  |
+| **Total**              | —                                                                                  | **$9M**          | **~$16.65M**                             |
+| **With Inflation (3.2%/yr over 20 years)** | —                                                              | —                | **$17M–$23M**, depending on features & tier |
+
+
 **Sources**
 
-- [Malathi P, Manoaj M, Manoj R, Vaikunth Raghavan, Vinodhini R.E., Highly Improved DNA Based Steganography, Procedia Computer Science, Volume 115, 2017, Pages 651-659, ISSN 1877-0509]([https://www.scientificamerican.com/article/dna-as-a-data-storage-device/](https://www.sciencedirect.com/science/article/pii/S1877050917319804?ref=pdf_download&fr=RR-2&rr=9394818e4f8152c6)
-- [Molecular Data Storage – Nature](https://www.nature.com/articles/s41586-021-03536-3)
-- [Express.js Documentation](https://expressjs.com/)
-- [MongoDB Manual](https://www.mongodb.com/docs/manual/)
-- [bcrypt npm package](https://www.npmjs.com/package/bcrypt)
-- [Glitch Project Hosting Docs](https://help.glitch.com/)
+- Malathi P, Manoaj M, Manoj R, Vaikunth Raghavan, Vinodhini R.E., Highly Improved DNA Based Steganography, Procedia Computer Science, Volume 115, 2017, Pages 651-659, ISSN 1877-0509.
+- Reif, John H. “Task 3: Molecular Scale Memory and Associated Computing Techniques.” Duke University Department of Computer Science.
+- Rueda J. Affordable pricing of CRISPR treatments is a pressing ethical imperative. CRISPR J. 2024;7(1):1–3. PMID: 39392045.
+- "Electroporation." ScienceDirect.
+
 
 ## Project Outcome & Next Steps
 The API I ended up building was quite difficult. The "encryption" thing seemed too simple, so I decided to teach myself how to set up a log in / sign up / user dashboard funciton. I'm eventually thinking about this site site being believeable complete with a marketing video and a speculative product of some kind. 
