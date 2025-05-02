@@ -1,4 +1,4 @@
-# Bioart as Biopolitics Final Project
+# Dynamic Web Development Final Project
 
 **I was unable to get this to run on Glitch because the database would't authenticate. Everything runs perfectly locally, I think I just need to rest and try again :/**
 
