@@ -26,10 +26,10 @@ In a near future where DNA is treated as just another dataset, people’s geneti
 
 Lorem Ipsum
 
-| ![](process_moodboard_01.png) | ![](process_moodboard_02.png) | ![](process_moodboard_03.png) |
-|------------------------------|------------------------------|------------------------------|
-| ![](process_moodboard_04.png) | ![](process_moodboard_05.png) | ![](process_moodboard_06.png) |
-| ![](process_moodboard_07.png) | ![](process_moodboard_08.png) | ![](process_moodboard_09.webp) |
+| ![](/process/process_moodboard_01.png) | ![](/process/process_moodboard_02.png) | ![](/process/process_moodboard_03.png) |
+|----------------------------------------|----------------------------------------|----------------------------------------|
+| ![](/process/process_moodboard_04.png) | ![](/process/process_moodboard_05.png) | ![](/process/process_moodboard_06.png) |
+| ![](/process/process_moodboard_07.png) | ![](/process/process_moodboard_08.png) | ![](/process/process_moodboard_09.webp) |
 
 ---
 
@@ -37,9 +37,9 @@ Lorem Ipsum
 
 Lorem Ipsum
 
-| ![](process_sketch.png) | ![](process_wirefreame_01.png) | ![](process_wirefreame_02.png) |
-|-------------------------|-------------------------------|-------------------------------|
-| ![](process_wirefreame_03.png) |  |  |
+| ![](/process/process_sketch.png) | ![](/process/process_wireframe_01.png) | ![](/process/process_wireframe_02.png) |
+|----------------------------------|------------------------------------------|------------------------------------------|
+| ![](/process/process_wireframe_03.png) |  |  |
 
 ---
 
@@ -47,7 +47,8 @@ Lorem Ipsum
 
 Lorem Ipsum
 
-| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
-|------------------------------|------------------------------|------------------------------|
-| ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
+| ![](/process/process_moodboard01.png) | ![](/process/process_moodboard01.png) | ![](/process/process_moodboard01.png) |
+|----------------------------------------|----------------------------------------|----------------------------------------|
+| ![](/process/process_moodboard01.png) | ![](/process/process_moodboard01.png) | ![](/process/process_moodboard01.png) |
+
 
