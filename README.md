@@ -1,7 +1,5 @@
 # Dynamic Web Development x Bioart as Biopolitics Final Project
 
-Final Project for DWD @ NYU ITP
-
 I was unable to get this to run on Glitch because the database would not authenticate.
 
 ## Original Project Proposal
