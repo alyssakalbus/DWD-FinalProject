@@ -37,7 +37,7 @@ Lorem Ipsum
 | ![](process_moodboard01.png) | ![](process_moodboard01.png) | ![](process_moodboard01.png) |
 
 
-## Final Design (Still Kind of WIP)
+## Final Design
 
 Lorem Ipsum
 
