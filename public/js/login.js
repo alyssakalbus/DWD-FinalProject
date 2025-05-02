@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('token', data.token); // If you implement token-based auth
                 
                 // Redirect to user dashboard or home page
-                window.location.href = '/lab'; // or wherever you want to redirect after login
+                window.location.href = '/userhome'; // or wherever you want to redirect after login
             } else {
                 // Login failed
                 console.error('Login failed:', data.error);

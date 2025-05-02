@@ -3,11 +3,8 @@
 ========================== */
 :root {
   --font-family: "font", sans-serif;
-  --heading-font-size: 1rem;
-  --subheading-font-size: 1rem;
-  --form-font-size: .75rem;
   --font-size: 1rem;
-  --line-height: 1;
+  --form-font-size: 0.75rem;
   --font-weight: 100;
   --heading-font-weight: 400;
   --subheading-font-weight: 100;
@@ -18,12 +15,16 @@
   --border-radius: 5px;
   --circle-border-color: var(--color-white);
   --circle-background: transparent;
+
+  /* DNA Animation */
+  --rotate-time: 4s;
+  --lines-color: #ffffff;
+  --dots-color: #ffffff;
 }
 
 /* ==========================
-   Base Styles
+   Fonts
 ========================== */
-/* Custom Font */
 @font-face {
   font-family: "font";
   src: url("/fonts/Heming Variable.ttf") format("truetype");
@@ -31,46 +32,27 @@
   font-weight: 100 900;
 }
 
-/* Reset Styles */
+/* ==========================
+   Base Styles
+========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: var(--font-family);
   font-size: var(--font-size);
-  line-height: var(--line-height);
-  color: var(--color-white);
-  background: var(--background-color);
   font-weight: var(--font-weight);
-}
-
-/* ==========================
-   Layout
-========================== */
-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  position: absolute;
-  top: 70%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
-
-main subhead {
-  text-transform: uppercase;
-  font-size: var(--subheading-font-size);
-  font-weight: var( --subheading-font-weight);
+  background: var(--background-color);
   color: var(--color-white);
-  margin: 0;
+  overflow: hidden;
+  height: 100%;
 }
 
 /* ==========================
-   Header
+   Layout & Header
 ========================== */
 header {
   position: fixed;
@@ -85,12 +67,11 @@ header {
 }
 
 header h1 {
+  font-weight: var(--heading-font-weight);
   text-transform: uppercase;
-  font-size: var(--heading-font-size);
-  font-weight: var( --heading-font-weight);
-  color: var(--color-white);
-  margin: 0;
+  font-size: 1rem;
   max-width: 2.5rem;
+  color: var(--color-white);
 }
 
 .home-link {
@@ -130,6 +111,72 @@ nav a.active {
 }
 
 /* ==========================
+   Forms
+========================== */
+.login-form,
+.signup-form {
+  font-size: var(--form-font-size);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  text-transform: uppercase;
+}
+
+.signup-form h2 {
+  text-align: center;
+  font-weight: var(--font-weight);
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--color-black);
+}
+
+.form-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.form-footer a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive form scaling */
+@media (max-width: 600px) {
+  .login-form,
+  .signup-form {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* ==========================
    Buttons
 ========================== */
 button,
@@ -138,7 +185,6 @@ button,
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   text-transform: uppercase;
-  text-align: center;
   padding: 1rem 0;
   color: var(--color-white);
   background: transparent;
@@ -160,122 +206,7 @@ button:active,
 }
 
 /* ==========================
-   Forms
-========================== */
-.login-form,
-.signup-form {
-  font-size: var(--form-font-size);
-  padding: 2rem;
-  border-radius: 15px;
-  max-width: 400px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  z-index: 1001;
-  text-transform: uppercase;
-}
-
-.login-form .form-group input,
-.signup-form .form-group input {
-  width: 100%;
-  padding: 0.75rem;
-  margin: .5rem 0;
-  border: none;
-  border-radius: var(--border-radius);
-  color: var(--color-black);
-}
-
-.signup-form h2 {
-  text-align: center;
-  font-weight: var(--font-weight);
-  margin-bottom: 1.5rem;
-  color: var(--color-white);
-}
-
-.form-group {
-  margin-bottom: 1.2rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: var(--font-weight);
-  color: var(--color-white);
-}
-
-.form-group small {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.75rem;
-  text-transform: none;
-  color: var(--color-text-secondary, #ffffff);
-}
-
-.form-footer {
-  margin-top: 1.5rem;
-  text-align: center;
-  font-size: 0.875rem;
-  color: var(--color-text, #ffffff);
-}
-
-.form-footer a {
-  color: var(--color-link, #ffffff);
-  text-decoration: none;
-}
-
-.form-footer a:hover {
-  text-decoration: underline;
-}
-
-.message-container {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border-radius: var(--border-radius, 4px);
-  font-size: 0.875rem;
-  display: none;
-  text-transform: none;
-}
-
-.success-message {
-  background-color: #c6f6d5;
-  color: #276749;
-  border: 1px solid #9ae6b4;
-}
-
-.error-message {
-  background-color: #fed7d7;
-  color: #c53030;
-  border: 1px solid #feb2b2;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .login-form,
-  .signup-form {
-    max-width: 90%;
-    padding: 1.5rem;
-  }
-}
-
-/* ==========================
-   Utility Classes
-========================== */
-.text-center {
-  text-align: center;
-}
-
-.mt-2 {
-  margin-top: 2rem;
-}
-
-.mb-2 {
-  margin-bottom: 2rem;
-}
-
-/* ==========================
-   Circle Styles
+   Circle
 ========================== */
 .circle {
   border: 1px solid var(--circle-border-color);
@@ -294,62 +225,11 @@ button:active,
 }
 
 /* ==========================
-   Animations
-========================== */
-@keyframes rotate-circle {
-  from {
-    transform: rotate(0deg) translate(-50%, -50%);
-  }
-  to {
-    transform: rotate(360deg) translate(-50%, -50%);
-  }
-}
-
-/* ==========================
-   Video Background
-========================== */
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  transform: translate(25%, 25%) scale(0.7);
-  min-width: 100%; 
-  min-height: 100%;
-  z-index: 0;
-  filter: blur(2px) brightness(1.2);
-}
-
-
-/* Prevent scrollbars */
-html, body {
-  overflow: hidden;
-  height: 100%;
-}
-
-/* ==========================
    DNA Animation
 ========================== */
-
-:root {
-  --rotate-time: 4s;
-  --rotate-delay: 0.15s;
-  --lines-color: rgba(255, 255, 255, 0.4);
-  --lines-width: .5px;
-  --dots-color: rgba(255, 255, 255, 0.4);
-}
-
-body {
-  background-color: black;
-}
-
 #dna {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-20%, -120%) scale(0.4);
-  perspective: 1000px;
-  z-index: 10;
+  display: flex;
 }
 
 #dna div {
@@ -358,10 +238,9 @@ body {
   height: 160px;
   margin-top: -80px;
   background-color: var(--lines-color);
-  float: left;
-  transform-style: preserve-3d;
   margin-left: 20px;
   animation: rotation var(--rotate-time) linear infinite;
+  transform-style: preserve-3d;
 }
 
 #dna div::before,
@@ -392,4 +271,19 @@ body {
   to {
     transform: rotateX(360deg);
   }
+}
+
+/* ==========================
+   Video Background
+========================== */
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transform: translate(25%, 25%) scale(0.8);
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: 0;
+  filter: blur(2px) brightness(1.2);
 }

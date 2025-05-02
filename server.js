@@ -4,7 +4,7 @@ const express = require('express');
 const config = require('./config.js');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const User = require('./models/users'); // Changed variable name to match usage below
+const User = require('./models/users');
 
 const app = express();
 const port = config.PORT || 3000;
@@ -34,7 +34,7 @@ mongoose.connect(config.MONGODB_URI || 'mongodb://localhost:27017/dwd-finalproje
 // Get All Users
 app.get("/api/v1/users", async (req, res) => {
     try {
-        const data = await User.find(); // Changed users to User
+        const data = await User.find();
         res.json({data})
     } catch (error) {
         console.error(error);
@@ -62,17 +62,12 @@ app.post('/api/v1/login', async (req, res) => {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
         
-        // Password is valid, create a session or token
-        // For basic implementation, just return user data
-        // For production, implement proper JWT or session-based authentication
-        
         res.json({
             userId: user._id,
             name: user.name,
             email: user.email,
             encryptedSequence: user.encryptedSequence,
             message: 'Login successful'
-            // token: generateToken(user) // If implementing JWT
         });
         
     } catch (error) {
@@ -123,7 +118,7 @@ app.put("/api/v1/users/:id", async (req, res) => {
             birthday: req.body.birthday
         };
 
-        const data = await User.findOneAndUpdate( // Changed users to User
+        const data = await User.findOneAndUpdate(
             { _id: req.params.id },
             updatedData,
             { new: true }
@@ -153,14 +148,11 @@ app.delete("/api/v1/users/:id", async (req, res) => {
 // Clear the database (only in development mode)
 // curl -X DELETE http://localhost:3000/api/v1/clear-database
 app.delete('/api/v1/clear-database', async (req, res) => {
-    // For safety, only allow this in development environment
+
     if (process.env.NODE_ENV !== 'production') {
         try {
-            // Clear the users collection
+  
             await User.deleteMany({});
-            
-            // If you have other collections, clear them here
-            // await OtherModel.deleteMany({});
             
             res.json({ message: 'Database cleared successfully' });
         } catch (error) {
@@ -183,6 +175,10 @@ app.get('/about', (req, res) => {
 
 app.get('/services', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/services.html'));
+});
+
+app.get('/userhome', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/userhome.html'));
 });
 
 app.get('/lab', (req, res) => {
