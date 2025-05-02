@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genesis Bio-encryption</title>
+    <title>User Dashboard</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
@@ -14,9 +14,51 @@
       
     <header>
         <h1><a href="/" class="home-link">Genesis Bio-encryption</a></h1>
-        <a href="/" class="cta-button shuffle">Back to Home</a>
+        <a href="/" class="cta-button shuffle">Log Out</a>
     </header>
 
+    <div class="side-panel">
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Sequence History</a>
+            <a href="#">Security</a>
+            <a href="#">Settings</a>
+        </nav>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="dashboard-section">
+            <div class="dashboard-header">
+                <h2 class="dashboard-title">User Dashboard</h2>
+                <span id="current-date"></span>
+            </div>
+            
+            <div class="user-info">
+                <div class="info-item">
+                    <span class="info-label">Name</span>
+                    <span class="info-value" id="user-name">Loading...</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span class="info-value" id="user-email">Loading...</span>
+                </div>
+            </div>
+            
+            <div class="dnainfo-section">
+                <div class="info-label">Encrypted DNA Sequence</div>
+                <div class="dnainfo-status">
+                    <div class="status-indicator"></div>
+                    <span>Secure Encryption Active</span>
+                </div>
+                <div class="dnainfo-container" id="dna-sequence">Loading sequence data...</div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="cta-button" id="export-btn">Export Sequence</button>
+                <button class="cta-button" id="refresh-btn">Refresh Key</button>
+            </div>
+        </div>
+    </div>
 
     <script src="/js/shuffle.js"></script>
     <script src="/js/login.js"></script>

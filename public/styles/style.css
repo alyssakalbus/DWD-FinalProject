@@ -167,12 +167,144 @@ nav a.active {
   text-decoration: underline;
 }
 
-/* Responsive form scaling */
 @media (max-width: 600px) {
   .login-form,
   .signup-form {
     max-width: 90%;
     padding: 1.5rem;
+  }
+}
+
+/* ==========================
+   User Dashboard
+========================== */
+
+.dashboard-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 900px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-section {
+  position: relative;
+  border: 1px solid var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  background-color: var(--circle-color);
+  backdrop-filter: blur(10px);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-weight: var(--heading-font-weight);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-weight: var(--heading-font-weight);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.info-value {
+  font-size: 1rem;
+  word-break: break-all;
+}
+
+.dnainfo-section {
+  margin-top: 1rem;
+}
+
+.dnainfo-container {
+  position: relative;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  word-break: break-all;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.side-panel {
+  position: fixed;
+  left: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+#dnainfo {
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  z-index: 5;
+}
+
+.dnainfo-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #5df15d;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+      width: 90%;
+      padding: 1rem;
+  }
+
+  .user-info {
+      grid-template-columns: 1fr;
+  }
+
+  .side-panel {
+      left: 2rem;
   }
 }
 
