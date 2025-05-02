@@ -73,7 +73,7 @@ The API I ended up building was quite difficult. The mock "encryption" thing see
 
 <table>
   <tr>
-    <td align="center"><img src="/process/process_moodboard_01.png" width="200"/><br/><sub>Colossol - Real Bioengineering Company</sub></td>
+    <td align="center"><img src="/process/process_moodboard_01.png" width="200"/><br/><sub>Colossal - Real Bioengineering Company</sub></td>
     <td align="center"><img src="/process/process_moodboard_02.png" width="200"/><br/><sub>Palantir - Data Company</sub></td>
     <td align="center"><img src="/process/process_moodboard_03.png" width="200"/><br/><sub>Layout Reference</sub></td>
   </tr>
