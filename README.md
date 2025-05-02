@@ -80,29 +80,29 @@ Lorem Ipsum
 
 ---
 
-## Final Design
+## Final Design (Screenshots)
 
 Lorem Ipsum
 
 <table>
   <tr>
     <td align="center">
-      <img src="/process/final_01.png" width="450"/><br/>
-      <sub>Sketch</sub>
+      <img src="/process/final_01.png" width="500"/><br/>
+      <sub>Home / Landing Page</sub>
     </td>
     <td align="center">
-      <img src="/process/final_02.png" width="450"/><br/>
-      <sub>Wireframe 1</sub>
+      <img src="/process/final_02.png" width="500"/><br/>
+      <sub>Log In</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="/process/final_03.png" width="450"/><br/>
-      <sub>Wireframe 2</sub>
+      <img src="/process/final_03.png" width="500"/><br/>
+      <sub>Sign Up</sub>
     </td>
     <td align="center">
-      <img src="/process/final_04.png" width="450"/><br/>
-      <sub>Wireframe 3</sub>
+      <img src="/process/final_04.png" width="500"/><br/>
+      <sub>User Dashboard</sub>
     </td>
   </tr>
 </table>
