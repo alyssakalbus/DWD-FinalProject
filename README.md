@@ -2,13 +2,14 @@
 
 **I was unable to get this to run on Glitch because the database would't authenticate. Everything runs perfectly locally, I think I just need to rest and try again :/**
 
-## How to Set Up and Run
+## How to Set Up & Run
 1. Download .zip
 2. Open in VSCode
-3. Open Terminal
-4. Install Dependiencies (express, mongoose, bcrypt, etc.)
-5. Dev Mode -> npm run dev
-6. Start -> npm start
+3. Open terminal
+4. Install npm
+5. Install dependencies w/ npm (express, mongoose, bcrypt, etc.)
+6. Dev Mode -> npm run dev
+7. Start -> npm start
 
 ## Original Project Proposal
 
@@ -23,10 +24,17 @@
 - If biometric ownership, security, and encryption becomes a luxury service, what happens to those who can’t afford to encrypt themselves?
 - What does it mean for DNA to be “secure,” and who is defining the metrics of security?
 
-In a near future where DNA is treated as just another dataset, people’s genetic data is treated similarly to your online activity. Insurance and marketing companies are able to predict everything about you based on your genetic predispositions, and doctor’s office’s are constantly hacked to obtain new, updated datasets, and are often shared with state surveillance agencies. This wellness-centered service that frames bio-encryption as the next stage of “wellness” and “mindfulness,” offering genetic editing therapies to confuse and throw off algorithms, but the only people that can afford the service are those who collected the data in the first place. My process will be a mix of writing, worldbuilding, and a final web development project. The website will be a critical look into a potential future regarding the increasing practice of highly invasive biometric surveillance practices and genetic ownership.
+**Project Sypnosis**
+In a near future where DNA is treated as just another dataset, people’s genetic data is treated similarly to your online activity. Insurance and marketing companies are able to predict everything about you based on your genetic predispositions, and doctor’s office’s are constantly hacked to obtain new, updated datasets, and are often shared with state-funded surveillance organizations. This wellness-centered service that frames bio-encryption as the next stage of “wellness” and “mindfulness,” offering genetic editing therapies to confuse and throw off algorithms, but the only people that can afford the service are those who collected the data in the first place. My process will be a mix of writing, worldbuilding, and a final web development project. The website will be a critical look into a potential future regarding the increasing practice of highly invasive biometric surveillance practices and genetic ownership. The purpose of this project is to present a realistic technology that speculates on the future of genetic surveillance. With the ongoing consequences that we see of the ”health and wellness” industry taking advantage of collapsing healthcare infrastructure in the United States, we are increasingly likely moving toward a future that disregards all health and biometric data as private information and instead used to make our lives more “convenient” or if they were being honest: it will be used to make our lives more trackable and exploitable.
+
+**Research**
+DNA Steganography is the process of embedding secret content into strands of synthetic or modified DNA in a way that is undetectable unless they have the “key” to decode it. Secret content can be embedded in DNA by translating DNA nucleotides (A, T, C, and G) into ASCII (A= 00, T = 11, C = 01, G = 10). The content’s (messages, imagery, software, etc.) binary data is converted to a string of ATCG letters and embedded within the DNA sequence. Only someone with the key, which would most likely be a PCR Primer that binds the message-containing strand, would be able to amplify and have access to the hidden content. This kind of process can also be combined with sythetic DNA practices to physically encode people's DNA. 
 
 ## Project Outcome & Next Steps
 The API I ended up building was quite difficult. The "encryption" thing seemed too simple, so I decided to teach myself how to set up a log in / sign up / user dashboard funciton. I'm eventually thinking about this site site being believeable complete with a marketing video and a speculative product of some kind. 
+
+## Development Process
+
 
 ## Mood Board and Inspiration
 
