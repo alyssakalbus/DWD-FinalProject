@@ -37,9 +37,9 @@ Lorem Ipsum
 
 Lorem Ipsum
 
-| ![](/process/process_sketch.png) | ![](/process/process_wirefreame_01.png) | ![](/process/process_wirefreame_02.png) |
+| ![](/process/process_sketch.png) | ![](/process/process_wireframe_01.png) | ![](/process/process_wireframe_02.png) |
 |----------------------------------|------------------------------------------|------------------------------------------|
-| ![](/process/process_wirefreame_03.png) |  |  |
+| ![](/process/process_wireframe_03.png) |  |  |
 
 ---
 
