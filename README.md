@@ -1,10 +1,10 @@
-# Dynamic Web Development Final Project
+# Dynamic Web Development x Bioart as Biopolitics Final Project
 
 Final Project for DWD @ NYU ITP
 
 I was unable to get this to run on Glitch because the database would not authenticate.
 
-## Research and Background
+## Original Project Proposal
 
 **Research Questions, Criticisms, and Observations**
 - What can the intentions and outcomes of military research reveal about future products and services?
@@ -18,6 +18,8 @@ I was unable to get this to run on Glitch because the database would not authent
 - What does it mean for DNA to be “secure,” and who is defining the metrics of security?
 
 In a near future where DNA is treated as just another dataset, people’s genetic data is treated similarly to your online activity. Insurance and marketing companies are able to predict everything about you based on your genetic predispositions, and doctor’s office’s are constantly hacked to obtain new, updated datasets, and are often shared with state surveillance agencies. The wellness-centered service that frames bio-encryption as the next stage of “wellness” and “mindfulness,” offering genetic editing therapies to confuse and throw off algorithms. My process will be a mix of writing, worldbuilding, and a final web development project. The website will be a critical look into a potential future regarding the increasing practice of highly invasive biometric surveillance practices and genetic ownership.
+
+## Project Outcome
 
 ## Mood Board and Inspiration
 
