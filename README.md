@@ -2,6 +2,8 @@
 
 **I was unable to get this to run on Glitch because the database would't authenticate. Everything runs perfectly locally, I think I just need to rest and try again :/**
 
+This was also done across my Bioart as Biopolitics Class and some of the research was done in Surveillance in the Simulation.
+
 ## How to Set Up & Run
 1. Download .zip
 2. Open in VSCode
