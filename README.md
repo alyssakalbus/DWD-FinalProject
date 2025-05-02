@@ -11,7 +11,7 @@
 6. Dev Mode -> npm run dev
 7. Start -> npm start
 
-## Original Project Proposal
+## Project Information
 
 **Research Questions, Criticisms, and Observations**
 - What can the intentions and outcomes of military research reveal about future products and services?
@@ -24,7 +24,7 @@
 - If biometric ownership, security, and encryption becomes a luxury service, what happens to those who can’t afford to encrypt themselves?
 - What does it mean for DNA to be “secure,” and who is defining the metrics of security?
 
-**Project Sypnosis**
+**Overview**
 
 In a near future where DNA is treated as just another dataset, people’s genetic data is treated similarly to your online activity. Insurance and marketing companies are able to predict everything about you based on your genetic predispositions, and doctor’s office’s are constantly hacked to obtain new, updated datasets, and are often shared with state-funded surveillance organizations. This wellness-centered service that frames bio-encryption as the next stage of “wellness” and “mindfulness,” offering genetic editing therapies to confuse and throw off algorithms, but the only people that can afford the service are those who collected the data in the first place. My process will be a mix of writing, worldbuilding, and a final web development project. The website will be a critical look into a potential future regarding the increasing practice of highly invasive biometric surveillance practices and genetic ownership. The purpose of this project is to present a realistic technology that speculates on the future of genetic surveillance. With the ongoing consequences that we see of the ”health and wellness” industry taking advantage of collapsing healthcare infrastructure in the United States, we are increasingly likely moving toward a future that disregards all health and biometric data as private information and instead used to make our lives more “convenient” or if they were being honest: it will be used to make our lives more trackable and exploitable.
 
@@ -53,7 +53,7 @@ DNA Steganography is the process of embedding secret content into strands of syn
 
 
 ## Project Outcome & Next Steps
-The API I ended up building was quite difficult. The "encryption" thing seemed too simple, so I decided to teach myself how to set up a log in / sign up / user dashboard funciton. I'm eventually thinking about this site site being believeable complete with a marketing video and a speculative product of some kind. 
+The API I ended up building was quite difficult. The mock "encryption" thing seemed too simple and didn't make sense for the project I ultimately want to make, so I decided to teach myself how to set up a log in / sign up / user dashboard funciton. I'm eventually thinking about this site site being believeable complete with a promo video and a speculative product of some kind. 
 
 ## Development Process
 
