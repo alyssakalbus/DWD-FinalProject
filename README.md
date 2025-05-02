@@ -80,7 +80,7 @@ Lorem Ipsum
 
 ---
 
-## Final Design (Screenshots)
+## Final Design (Screenshots from Local Deployment)
 
 Lorem Ipsum
 
