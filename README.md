@@ -57,21 +57,21 @@ Lorem Ipsum
 <table>
   <tr>
     <td align="center">
-      <img src="/process/process_sketch.png" width="350"/><br/>
+      <img src="/process/process_sketch.png" width="450"/><br/>
       <sub>Sketch</sub>
     </td>
     <td align="center">
-      <img src="/process/process_wireframe_01.png" width="350"/><br/>
+      <img src="/process/process_wireframe_01.png" width="450"/><br/>
       <sub>Wireframe 1</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="/process/process_wireframe_02.png" width="350"/><br/>
+      <img src="/process/process_wireframe_02.png" width="450"/><br/>
       <sub>Wireframe 2</sub>
     </td>
     <td align="center">
-      <img src="/process/process_wireframe_03.png" width="350"/><br/>
+      <img src="/process/process_wireframe_03.png" width="450"/><br/>
       <sub>Wireframe 3</sub>
     </td>
   </tr>
