@@ -42,6 +42,25 @@ app.get("/api/v1/users", async (req, res) => {
     }
 });
 
+// Get Single User
+app.get("/api/v1/users/:id", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            encryptedSequence: user.encryptedSequence
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Login User
 app.post('/api/v1/login', async (req, res) => {
     try {
@@ -76,7 +95,6 @@ app.post('/api/v1/login', async (req, res) => {
     }
 });
 
-
 // Create a new user with hashed password and encrypted DNA sequence
 app.post('/api/v1/users', async (req, res) => {
     try {
@@ -109,7 +127,7 @@ app.post('/api/v1/users', async (req, res) => {
     }
 });
 
-// User Login w/ hashed password verification
+// Update user info
 app.put("/api/v1/users/:id", async (req, res) => {
     try {
         const updatedData = {
@@ -131,10 +149,10 @@ app.put("/api/v1/users/:id", async (req, res) => {
     }
 });
 
-
+// Delete user
 app.delete("/api/v1/users/:id", async (req, res) => {
     try {
-        const deletedDocument = await User.findOneAndDelete({ _id: req.params.id }); // Changed users to User
+        const deletedDocument = await User.findOneAndDelete({ _id: req.params.id });
         res.json({
             message: "Successfully removed item",
             data: deletedDocument
@@ -146,12 +164,9 @@ app.delete("/api/v1/users/:id", async (req, res) => {
 });
 
 // Clear the database (only in development mode)
-// curl -X DELETE http://localhost:3000/api/v1/clear-database
 app.delete('/api/v1/clear-database', async (req, res) => {
-
     if (process.env.NODE_ENV !== 'production') {
         try {
-  
             await User.deleteMany({});
             
             res.json({ message: 'Database cleared successfully' });
@@ -162,6 +177,11 @@ app.delete('/api/v1/clear-database', async (req, res) => {
     } else {
         res.status(403).json({ error: 'This operation is not allowed in production' });
     }
+});
+
+// Logout function
+app.post('/api/v1/logout', (req, res) => {
+    res.json({ message: 'Logout successful' });
 });
 
 // multipage routes
@@ -177,8 +197,8 @@ app.get('/services', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/services.html'));
 });
 
-app.get('/userhome', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/userhome.html'));
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/dashboard.html'));
 });
 
 app.get('/lab', (req, res) => {
@@ -192,7 +212,6 @@ app.get('/login', (req, res) => {
 app.get('/pricing', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/pricing.html'));
 });
-
 
 app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/signup.html'));
